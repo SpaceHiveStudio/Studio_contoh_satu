@@ -1,65 +1,51 @@
 import Image from "next/image";
+import Banner from "@/component/home-component/banner";
+import AboutHome from "@/component/home-component/about-home";
+import ServiceHome from "@/component/home-component/service-home";
+import FeaturedWork from "@/component/home-component/FeaturedWork";
+import PartnerSection from "@/component/home-component/partner";
+import ExploreSection from "@/component/home-component/Viewportofolio";
+import WhatsappButton from "@/component/WAbutton";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <main className="flex-1">
+      <Banner
+        title="Timeless Interiors Crafted with Precision."
+        subtitle="Creating serene and meaningful spaces."
+        videoSrc="/video/video.mp4"
+        alt="Minimalist luxury interior with neutral tones and soft lighting."
+      />   
+      <div className="relative w-full flex flex-col group/design-root overflow-x-hidden">
+        <div className="layout-container flex h-full grow flex-col">
+          <div className="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center">
+            <div className="layout-content-container flex flex-col max-w-screen-xl w-full">
+            <AboutHome
+              title="About Our Studio"
+              description="We believe in the power of simplicity and craftsmanship. Our design philosophy centers on creating spaces that are not only beautiful but also deeply personal and functional, using natural materials and a refined aesthetic to evoke a sense of calm and timeless elegance."
+              buttonText="OUR STUDIO"
+              image="https://lh3.googleusercontent.com/aida-public/AB6AXuBH4LeSmxs-VLEsGtFc4rCQ5osg5anDGvUAP4f3oR8skU2zrTVkvOq1BXEf0fTE3fQkGiopzc3T_pJRx_XCrvRdUlQjNUsfpTfdsGElP_1etGDP0JfO0XDhNJNC2xyuddIW8yGgldqN9CiAoHI25-6YLxe1YAugSkASx-WnGYEIlmhivNeMSXn6ItnCLnoG-cRdOckNVCvovWZTH6jk9FlQmaP2kaMwfpm6qZxu6SYMSk4bqVRQThnDkG3jxu6AvSFjbIp3LR2VfRI"
+              alt="Studio interior material detail"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <ServiceHome 
+              label = "Our Services"
+              title = "A Holistic Approach to Design"
+              services = {[
+                "Interior Architecture",
+                "Custom Furnishings",
+                "Lighting Design",
+                "Art Curation",
+                "Styling & Accessorizing",
+                "Turnkey Projects",
+              ]}
+            />
+            <FeaturedWork />
+            <PartnerSection />
+            <ExploreSection />
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

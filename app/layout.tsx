@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Navbar from "@/component/navbar";
+import Footer from "@/component/footer";
 import "./globals.css";
+import WhatsappButton from "@/component/WAbutton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +27,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Work+Sans:wght@300;400;500&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark`} 
       >
+      <Navbar />
         {children}
+      <Footer />
+      <WhatsappButton
+            phone="9999"
+            message="Halo, saya tertarik dengan layanan interior Anda!"
+      />
       </body>
     </html>
   );
