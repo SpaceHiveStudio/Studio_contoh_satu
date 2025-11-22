@@ -24,17 +24,17 @@ export default function Home() {
               title="About Our Studio"
               description="We believe in the power of simplicity and craftsmanship. Our design philosophy centers on creating spaces that are not only beautiful but also deeply personal and functional, using natural materials and a refined aesthetic to evoke a sense of calm and timeless elegance."
               buttonText="OUR STUDIO"
-              image="https://lh3.googleusercontent.com/aida-public/AB6AXuBH4LeSmxs-VLEsGtFc4rCQ5osg5anDGvUAP4f3oR8skU2zrTVkvOq1BXEf0fTE3fQkGiopzc3T_pJRx_XCrvRdUlQjNUsfpTfdsGElP_1etGDP0JfO0XDhNJNC2xyuddIW8yGgldqN9CiAoHI25-6YLxe1YAugSkASx-WnGYEIlmhivNeMSXn6ItnCLnoG-cRdOckNVCvovWZTH6jk9FlQmaP2kaMwfpm6qZxu6SYMSk4bqVRQThnDkG3jxu6AvSFjbIp3LR2VfRI"
+              image="/image/spacehive.jpeg"
               alt="Studio interior material detail"
             />
             <ServiceHome 
               label = "Our Services"
               title = "A Holistic Approach to Design"
               services = {[
-                "Interior Architecture",
-                "Custom Furnishings",
-                "Lighting Design",
-                "Art Curation",
+                "Interior Design",
+                "Space Planning",
+                "Custom Furniture",
+                "Renovation Concepting",
                 "Styling & Accessorizing",
                 "Turnkey Projects",
               ]}
