@@ -26,7 +26,7 @@ export default function Navbar() {
           href="/"
           className="text-text-light text-lg font-semibold tracking-wide"
         >
-          SpaceHive
+          SpaceHive Studio
         </Link>
       </div>
 

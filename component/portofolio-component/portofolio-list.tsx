@@ -1,4 +1,15 @@
+"use client";
+import { useState } from "react";
+
 export default function PortfolioSection() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Filter portfolio items berdasarkan title atau location
+  const filteredItems = portfolioItems.filter(
+    (item) =>
+      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.location.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   return (
     <main className="py-16 sm:py-24 px-4">
       {/* Title */}
@@ -8,9 +19,21 @@ export default function PortfolioSection() {
         </h1>
       </div>
 
+      {/* Search */}
+      <div className="flex justify-center mb-16">
+        <input
+          type="text"
+          placeholder="Search by project or location..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full max-w-md px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+
+      {/* Masonry Grid */}
       {/* Masonry Grid */}
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
-        {portfolioItems.map((item, index) => (
+        {filteredItems.map((item, index) => (
           <div
             key={index}
             className="break-inside-avoid group relative overflow-hidden"
@@ -24,10 +47,10 @@ export default function PortfolioSection() {
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black/10 dark:bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-black/10 dark:bg-black/30 opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300"></div>
 
-              {/* Title */}
-              <div className="absolute bottom-0 left-0 p-6 md:p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {/* Title & Location */}
+              <div className="absolute bottom-0 left-0 p-6 md:p-8 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-white text-xl font-bold leading-tight">
                   {item.title}
                 </h3>
@@ -36,6 +59,11 @@ export default function PortfolioSection() {
             </a>
           </div>
         ))}
+        {filteredItems.length === 0 && (
+          <p className="col-span-full text-center text-gray-500">
+            No projects found.
+          </p>
+        )}
       </div>
     </main>
   );
