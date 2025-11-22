@@ -77,19 +77,32 @@ export default function PartnerSection() {
           </p>
         </div>
 
-        {/* Logos */}
-        <div className="w-full max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-12 gap-x-8 items-center justify-items-center">
-            {partners.map((partner) => (
+        {/* Logos Running Text */}
+        <div className="w-full overflow-hidden">
+          <div className="flex animate-marquee gap-12">
+            {partners.concat(partners).map((partner, index) => (
               <div
-                key={partner.id}
-                className="grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                key={index}
+                className="flex-shrink-0 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
               >
                 {partner.svg}
               </div>
             ))}
           </div>
         </div>
+
+        {/* Tailwind custom animation */}
+        <style jsx global>{`
+          @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            display: flex;
+            animation: marquee 20s linear infinite;
+          }
+        `}</style>
+
       </div>
     </section>
   );
