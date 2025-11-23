@@ -26,8 +26,11 @@ export async function generateMetadata({ params }: ServiceDetailProps) {
   };
 }
 
-export default function ServiceDetailPage({ params }: ServiceDetailProps) {
-  const { slug } = React.use(params); // unwrap Promise di server component
+export default async function ServiceDetailPage({ params }: ServiceDetailProps) {
+  // const { slug } = React.use(params); // unwrap Promise di server component
+  
+  const { slug } = await params;
+  // const data = SERVICE_DATA.find((p) => p.slug === slug);
   const data = SERVICE_DATA[slug];
   if (!data) {
     return (
