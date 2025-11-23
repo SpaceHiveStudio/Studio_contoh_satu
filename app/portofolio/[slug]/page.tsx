@@ -253,51 +253,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     return notFound();
   }
 
-  const seo = {
-    title: `${project.title} - SpaceHive Interior Studio`,
-    description: project.description.slice(0, 2).join(" "), // ambil 1-2 kalimat pertama
-    url: `https://www.spacehive.com/projects/${project.slug}`,
-    ogImage: project.images[0]?.src || "/default-og-image.jpg",
-  };
-
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": project.title,
-    "description": seo.description,
-    "image": project.images.map(img => img.src),
-    "url": seo.url,
-    "datePublished": project.year,
-    "about": project.services,
-    "locationCreated": project.location
-  };
 
   return (
-    <>
-    <Head>
-        <title>{seo.title}</title>
-        <meta name="description" content={seo.description} />
-        <link rel="canonical" href={seo.url} />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={seo.title} />
-        <meta property="og:description" content={seo.description} />
-        <meta property="og:url" content={seo.url} />
-        <meta property="og:type" content="article" />
-        <meta property="og:image" content={seo.ogImage} />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={seo.title} />
-        <meta name="twitter:description" content={seo.description} />
-        <meta name="twitter:image" content={seo.ogImage} />
-
-        {/* Structured Data */}
-        <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-    </Head>
     <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
         <div className="layout-container flex h-full grow flex-col">
             <div className="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
@@ -357,6 +314,5 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </div>
         </div>
     </div>
-    </>
   );
 }

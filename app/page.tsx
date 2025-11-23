@@ -8,35 +8,42 @@ import ExploreSection from "@/component/home-component/Viewportofolio";
 import WhatsappButton from "@/component/WAbutton";
 import Head from "next/head";
 
+export const metadata = {
+  title: "SpaceHive - Studio Desain Interior Profesional",
+  description:
+    "SpaceHive menghadirkan desain interior yang timeless dan fungsional. Menciptakan ruang yang indah, tenang, dan bermakna untuk rumah, kantor, dan proyek komersial.",
+  metadataBase: new URL("https://www.spacehive.com/"),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "SpaceHive - Studio Desain Interior Profesional",
+    description:
+      "SpaceHive menghadirkan desain interior yang timeless dan fungsional. Menciptakan ruang yang indah, tenang, dan bermakna untuk rumah, kantor, dan proyek komersial.",
+    url: "https://www.spacehive.com/",
+    siteName: "SpaceHive",
+    images: [
+      {
+        url: "https://www.spacehive.com/images/og-image.jpg",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SpaceHive - Studio Desain Interior Profesional",
+    description:
+      "SpaceHive menghadirkan desain interior yang timeless dan fungsional.",
+    images: ["https://www.spacehive.com/images/og-image.jpg"],
+  },
+};
+
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>SpaceHive - Studio Desain Interior Profesional</title>
-        <meta
-          name="description"
-          content="SpaceHive menghadirkan desain interior yang timeless dan fungsional. Menciptakan ruang yang indah, tenang, dan bermakna untuk rumah, kantor, dan proyek komersial."
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.spacehive.com/" />
-
-        {/* Open Graph / Social Sharing */}
-        <meta property="og:title" content="SpaceHive - Studio Desain Interior Profesional" />
-        <meta
-          property="og:description"
-          content="SpaceHive menghadirkan desain interior yang timeless dan fungsional. Menciptakan ruang yang indah, tenang, dan bermakna untuk rumah, kantor, dan proyek komersial."
-        />
-        <meta property="og:image" content="https://www.spacehive.com/images/og-image.jpg" />
-        <meta property="og:url" content="https://www.spacehive.com/" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="SpaceHive - Studio Desain Interior Profesional" />
-        <meta
-          name="twitter:description"
-          content="SpaceHive menghadirkan desain interior yang timeless dan fungsional."
-        />
-        <meta name="twitter:image" content="https://www.spacehive.com/images/og-image.jpg" />
-      </Head>
     <main className="flex-1">
       <Banner
         title="Timeless Interiors Crafted with Precision."
@@ -75,6 +82,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-    </>
   );
 }

@@ -13,7 +13,7 @@ export default function AboutSection() {
                 className="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-lg min-h-[32rem]"
                 style={{
                 backgroundImage:
-                    "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBY_ZCgVcXS65nLLfH0EQ3xFhJ0isvm7jaVSe-6Y-5j3Rj0U3dXn9enZ0I8eLw4-HPQiWgP8JV4fxYKv8h1s-MpTCdWb9IsGUve1gNKFSQ2cxey-KGE6PxjRsQ2LLpaN8M-_4XDK120cx-qBxc3Jp79HSXbaLA_7miOU05sl-3-LPEGnu9TwG5gfsGVNkvV0M4-uB64l7edVCMkxZlNqNRJ0bBTEq8YrFFUdUaBcYecdmkLh2RIzR7lG-KuAGAwVAC0CXeJXZgrG_4')",
+                    "url('/image/spacehive.jpeg')",
                 }}
             ></div>
             </div>

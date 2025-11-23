@@ -2,7 +2,7 @@
 import Services from "@/component/service-component/service";
 
 export const metadata = {
-  title: "Layanan Desain Interior Profesional - SpaceHive",
+  title: "Our Service | SpaceHive Studio",
   description:
     "SpaceHive menawarkan layanan desain interior lengkap: interior rumah, kantor, custom furniture, renovasi, dan turnkey projects. Menciptakan ruang yang estetik, fungsional, dan timeless.",
   openGraph: {

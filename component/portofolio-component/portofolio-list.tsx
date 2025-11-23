@@ -11,14 +11,8 @@ export default function PortfolioSection() {
       item.location.toLowerCase().includes(searchQuery.toLowerCase())
   );
   return (
-    <main className="py-16 sm:py-24 px-4">
-      {/* Title */}
-      <div className="flex flex-wrap justify-center gap-3 mb-16 text-center">
-        <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-normal leading-tight tracking-tight w-full">
-          Our Selected Works
-        </h1>
-      </div>
-
+    
+    <>
       {/* Search */}
       <div className="flex justify-center mb-16">
         <input
@@ -65,7 +59,7 @@ export default function PortfolioSection() {
           </p>
         )}
       </div>
-    </main>
+    </>
   );
 }
 

@@ -3,7 +3,7 @@
 import AboutSection from "@/component/about-component/about";
 
 export const metadata = {
-  title: "About Us | SpaceHive Studio - Luxury Interior Design",
+  title: "About Us | SpaceHive Studio",
   description:
     "Discover SpaceHive Studio, our design philosophy, talented team, and our commitment to creating luxury interiors that combine elegance and functionality.",
   openGraph: {

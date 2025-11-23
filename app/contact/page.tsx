@@ -1,5 +1,10 @@
 import ContactSection from "@/component/contact-component/contact";
 
+
+export const metadata = {
+  title: "Contact | SpaceHive Studio",
+};
+
 export default function ContactPage() {
     return (
         <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
